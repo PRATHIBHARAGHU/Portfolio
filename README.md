@@ -1,5 +1,5 @@
 # Prathibha R — Portfolio
-
+ 
 A premium, single-page personal portfolio built with React, TypeScript, Vite, Tailwind CSS v4, Framer Motion, and Lucide React.
 
 ## Stack
