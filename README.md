@@ -38,16 +38,3 @@ src/
   utils/        cn (classnames) and Framer Motion variants
 ```
 
-## Things to replace before deploying
-
-- `public/resume/Prathibha-R-Resume.pdf` — placeholder file, swap in the real resume PDF (keep the same filename, or update the path in `src/data/navigation.ts` and `src/sections/Hero/Hero.tsx`).
-- `src/data/navigation.ts` — GitHub/LinkedIn/email URLs are placeholders.
-- `src/data/projects.ts` — GitHub and live demo URLs are placeholders.
-- `src/hooks/useContactForm.ts` — the contact form currently opens the visitor's email client via a `mailto:` link (`CONTACT_EMAIL`). Swap in a real form backend (e.g. Formspree, a serverless function, or your own API) if you'd prefer in-page submission.
-- `src/assets/lottie/ai-network.json` — a self-authored Lottie animation (used because this environment couldn't reach external asset CDNs). Swap in any `.json` export from LottieFiles or After Effects/Bodymovin if you want a different illustration — just keep the same import in `src/components/ui/AINetworkIllustration.tsx`.
-
-## Notes
-
-- Dark/light theme is toggled from the navbar and persisted across visits.
-- All content lives in `src/data/*.ts` as typed objects — no copy is hardcoded inside components.
-- Respects `prefers-reduced-motion`.
