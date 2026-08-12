@@ -1,12 +1,16 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download } from "lucide-react";
-import { LinkButton } from "@/components/ui/Button";
+import { useState } from "react";
+import { ArrowRight, Download, Eye } from "lucide-react";
+import { Button, LinkButton } from "@/components/ui/Button";
 import { AINetworkIllustration } from "@/components/ui/AINetworkIllustration";
 import { fadeUp, staggerContainer } from "@/utils/motion";
 
+const resumeUrl = `${import.meta.env.BASE_URL}resume/Prathibha_R_Resume.pdf`;
 const roles = ["AI/ML Engineer", "Full Stack Developer", "Research Enthusiast"];
 
 export function Hero() {
+  const [showResume, setShowResume] = useState(false);
+
   return (
     <section
       id="home"
@@ -63,7 +67,7 @@ export function Hero() {
             className="mt-9 flex flex-wrap items-center gap-4"
           >
             <LinkButton
-              href="/resume/Prathibha-R-Resume.pdf"
+              href={resumeUrl}
               download
               variant="primary"
               size="lg"
@@ -71,9 +75,18 @@ export function Hero() {
             >
               Download Resume
             </LinkButton>
+            <Button
+              type="button"
+              onClick={() => setShowResume(true)}
+              variant="secondary"
+              size="lg"
+              icon={<Eye size={17} strokeWidth={2} />}
+            >
+              View Resume
+            </Button>
             <LinkButton
               href="#projects"
-              variant="secondary"
+              variant="ghost"
               size="lg"
               icon={<ArrowRight size={17} strokeWidth={2} />}
             >
@@ -91,6 +104,37 @@ export function Hero() {
           <AINetworkIllustration />
         </motion.div>
       </div>
+
+      {showResume ? (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 px-4 py-6">
+          <div className="relative mx-auto w-full max-w-5xl overflow-hidden rounded-3xl bg-[var(--surface)] shadow-2xl">
+            <div className="flex items-center justify-between border-b border-[color-mix(in_srgb,var(--text)_10%,transparent)] px-5 py-4">
+              <div>
+                <p className="text-sm uppercase tracking-[0.28em] text-[var(--muted)]">
+                  Resume Preview
+                </p>
+                <h2 className="mt-1 text-xl font-semibold text-[var(--text)]">
+                  Prathibha R Resume
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setShowResume(false)}
+                className="rounded-full border border-[color-mix(in_srgb,var(--text)_12%,transparent)] bg-[color-mix(in_srgb,var(--surface)_90%,transparent)] px-3 py-2 text-sm font-medium text-[var(--text)] transition hover:bg-[color-mix(in_srgb,var(--text)_6%,transparent)]"
+              >
+                Close
+              </button>
+            </div>
+            <div className="h-[80vh] bg-black">
+              <iframe
+                title="Resume Preview"
+                src={resumeUrl}
+                className="h-full w-full border-0"
+              />
+            </div>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
