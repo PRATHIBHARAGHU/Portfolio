@@ -14,6 +14,7 @@ A premium, single-page personal portfolio built with React, TypeScript, Vite, Ta
 
 ## Getting started
 
+
 ```bash
 npm install
 npm run dev       # start local dev server
@@ -22,6 +23,7 @@ npm run preview   # preview the production build locally
 ```
 
 ## Project structure
+
 
 ```
 src/
