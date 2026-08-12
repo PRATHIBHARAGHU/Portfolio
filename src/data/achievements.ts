@@ -2,7 +2,7 @@ import type { Achievement } from "./types";
 
 export const achievements: Achievement[] = [
   {
-    title: "NPTEL Python — Elite + Silver",
+    title: "NPTEL — Elite + Silver",
     issuer: "NPTEL",
     description:
       "Certified with Elite + Silver distinction for the NPTEL {Python programming course} and {Introduction to IOT} , reflecting strong performance in proctored assessments.",
