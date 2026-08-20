@@ -21,7 +21,7 @@
 // }
 
 
-import avatar from "@/assets/images/avatar.png";
+import avatar from "@/assets/images/avatar1.png";
 import { cn } from "@/utils/cn";
 
 interface AINetworkIllustrationProps {
